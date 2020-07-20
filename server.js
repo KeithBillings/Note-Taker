@@ -26,8 +26,8 @@ app.get('/api/notes', (req, res) => {
 
 // Saving a note
 app.post('/api/notes', function (req, res) {
-  let newNote = req.body;
-  let notes = JSON.parse(fs.readFileSync(__dirname + '/db/db.json', 'utf-8'));
+  const newNote = req.body;
+  const notes = JSON.parse(fs.readFileSync(__dirname + '/db/db.json', 'utf-8'));
   newNote.id = String(notes.length);
 
   notes.push(newNote);
@@ -37,7 +37,7 @@ app.post('/api/notes', function (req, res) {
 
 // Deleting a note
 app.delete('/api/notes/:id', function (req, res) {
-  let notes = JSON.parse(fs.readFileSync(__dirname + '/db/db.json', 'utf-8'));
+  const notes = JSON.parse(fs.readFileSync(__dirname + '/db/db.json', 'utf-8'));
   const deleteNote = notes.filter(item => item.id != req.params.id);
 
   fs.writeFileSync(__dirname + "/db/db.json", JSON.stringify(deleteNote));
