@@ -3,11 +3,13 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, '/db/')));
 app.use(express.static(path.join(__dirname, '/public/')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-const port = process.env.PORT || 3000;
 
 // routers
 app.get("/", (req, res) => {
@@ -23,10 +25,10 @@ app.get('/api/notes', (req,res) => {
 });
 
 // Saving a note
-app.post('/api/notes', (req,res) => {
+app.post('/api/notes', function (req, res) {
   let newNote = req.body;
-  let notes = JSON.parse(fs.readFileSync(__dirname, '/db/db.json'));
-
+  let notes = fs.readFileSync(__dirname + '/db/db.json', 'utf-8');
+  notes = JSON.parse(notes);
   newNote.id = String(notes.length);
 
   notes.push(newNote);
@@ -38,12 +40,3 @@ app.post('/api/notes', (req,res) => {
 app.listen(port, () => {
   console.log(`Running on port: ${port}`)
 });
-
-
-
-
-// user writes into web browser with data
-// take data into variable 1
-// fs.readfile of the existing db.json in variable 2
-// when user clicks 'save'
-// fs.writefile of variable 1 and 2 
