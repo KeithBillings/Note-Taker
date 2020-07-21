@@ -6,6 +6,8 @@ This is a note taking app. The user can save their notes and come back to them o
 
 ## Table of Contents
 
+ * [Deployment](#deployment)
+
  * [Usage](#usage)
 
  * [Screenshots](#screenshots)
@@ -13,6 +15,10 @@ This is a note taking app. The user can save their notes and come back to them o
  * [Authors](#authors)
 
  * [Questions](#questions)
+
+## Deployment
+
+<a href="https://note-taking-app-2020.herokuapp.com/"> Deployment Link </a>
 
 ## Usage
 
