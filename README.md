@@ -20,7 +20,7 @@ This is a demonstration of using Express to create a server, hosting it on Herok
 
 ## Screenshots
 
-![image]()
+![image](./NoteTaker.gif)
 
 ## Authors
 
