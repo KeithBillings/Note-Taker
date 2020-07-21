@@ -10,7 +10,7 @@ This is a note taking app. The user can save their notes and come back to them o
 
  * [Usage](#usage)
 
- * [Screenshots](#screenshots)
+ * [Screenshot](#screenshot)
 
  * [Authors](#authors)
 
@@ -24,7 +24,7 @@ This is a note taking app. The user can save their notes and come back to them o
 
 This is a demonstration of using Express to create a server, hosting it on Heroku to serve a webpage, and having information on the server created, saved, or deleted. 
 
-## Screenshots
+## Screenshot
 
 ![image](./NoteTaker.gif)
 
